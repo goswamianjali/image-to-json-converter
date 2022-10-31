@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pass Port</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   
+</head>
+<body aria-hidden="False">
+    <div class="pt-3">
+        <span class="d-block my-2 text-center px104 m-auto" style="margin:10px 0px !important">
+            <div class ="new____s_ ba"></div>
+        </span>
+        <div class="d-flex justify-content-center px-2 mb-3">
+            <div class="main_area text-center">
+                <div class="col bg-white p-0 border1">
+                    <span class="d-block mx-auto my-2 text-center"></span>
+                    <a href="javascript:;" class="mob-searchIcon"><i class="fa fa-search"></i></a>
+                    <h1 class="col-12 sub_headings heading_border p-3 m-0"><center>IMAGE TO JSON CONVERTER</center></h1>
+                    <div class="col px-4 pb-4 mps">
+                        <center>
+                        <img width="620" src="https://www.pericent.com/wp-content/uploads/2019/08/OCR.png">
+                        </center>
+                        <p class="sub_text mx-auto my-4 px-4">
+                            <center>
+                            "We present an Oniline OCR (Optical Character Recognition) service to extract text from image. Upload your passport image to our text convertor , click on convert and get your text file instantly."
+                            </center>
+                        </p>
+                    </div>
+                </div>
+                <center>
+                <div class="res_heading my-3" id= "result_section"> RESULT</div>
+                <div class="border1 bg-black text-left px-4 pt-4 border-bottom-0 mps">
+                    <div class="col res_inn_heading mb-3 text-center p-0">Text Found on Your Image is:</div>
+                        <textarea cols="30" name="original" rows="10" style="width: 100%;" id="convertedText">
+                        </textarea>
+
+                        <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
+
+                        <script>  
+
+                            var myFile = document.getElementById('fileUpload');
+                            myFile.addEventListener('change', recognizeText);
+
+                            async function recognizeText({ target: { files }  }) {
+                                Tesseract.recognize(files[0]).then(function(result) {
+                                    console.log("recognizeText: result.text:", result.text);
+                                    document.getElementById("convertedText").value = result.text;
+                                });
+                            }
+
+                        </script>
+                    </div>
+                </div>
+                </center>
+                <div class="col p-4 bg-white d-flex justify-content-between share_options border-top 0 mps">
+                    <span class="d-inline-flex m-1 ar_tryagain" data-toggle="tooltip" title onclick="refresh_page()" data-name="Try Again" data-original-title=" Try Again"></span>
+                    <span class="d-inline-flex m-1 ar_copy" data-toggle="tooltip" title onclick="CopyText(this, 'get_text','text')" data-name="Copy To Clipboard" data-original-title="Copy To Clipboard"></span>
+                    <span class="d-inline-flex m-1 ar_download" data-toggle="tooltip" title onclick="file_download()" data-name="Download" data-original-title="Download"></span>                        
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/js/doc.js"></script>
+</body>
+</html>
+                

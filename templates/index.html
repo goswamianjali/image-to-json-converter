@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pass Port</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   
+</head>
+<body aria-hidden="False">
+    <div class="pt-3">
+        <span class="d-block my-2 text-center px104 m-auto" style="margin:10px 0px !important">
+            <div class ="new____s_ ba"></div>
+        </span>
+        <div class="d-flex justify-content-center px-2 mb-3">
+            <div class="main_area text-center">
+                <div class="col bg-white p-0 border1">
+                    <span class="d-block mx-auto my-2 text-center"></span>
+                    <a href="javascript:;" class="mob-searchIcon"><i class="fa fa-search"></i></a>
+                    <h1 class="col-12 sub_headings heading_border p-3 m-0"><center>IMAGE TO JSON CONVERTER</center></h1>
+                    <div class="col px-4 pb-4 mps">
+                        <center>
+                        <img width="620" src="https://www.pericent.com/wp-content/uploads/2019/08/OCR.png">
+                        </center>
+                        <p class="sub_text mx-auto my-4 px-4">
+                            <center>
+                            "We present an Oniline OCR (Optical Character Recognition) service to extract text from image. Upload your passport image to our text convertor , click on convert and get your text file instantly."
+                            </center>
+                        </p>
+                        <form method="POST" action="/convert/" target="_blank" accept-charset="UTF-8" id="image-to-text-form" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            
+                            <input name="_token" type="hidden" value="rdk03S648czxtdfdwBVASbF8UYpFHDmI5fKV9yir" required=True>
+                            
+                            <div class="tool_input mt-4 border1 p-3 mps">
+                                <div class="input_section bg-white" id="first_upload_section" ondragover="_ondragover(event)" ondrop="_ondrop(event)" ondragleave="_ondragleave(event)" ondragenter="_ondragenter(event)">
+                                    <div class="drag_drog w-100"></div>
+                                    <div class="upload_option">
+                                        
+                                        <p class="d1 mb-2 fw_700">
+                                            <i><center> Drop your image here! </center></i>
+                                        </p>
+                                        <p>
+                                            <span class="p-2 d-inline-block bg_f6f8fa bg_202223"><center>JPG, JPEG and PNG Files are allowed</center></span>
+                                        </p>
+                                        <center>
+                                            <img class="lazyloaded" width="220" src="https://static.thenounproject.com/png/342589-200.png" alt="Upload">
+                                        <div class="d-inline-flex">
+                                            <label class="label_upload m-1 d-flex align-items-center text-white cp" for="fileUpload">
+                                                <div class="upload_btns upload_file border-0"></div>
+                                                
+                                                <input class="convert" id="fileUpload" accept=".jpg,.jpeg,.png" name="fileUpload" required type="file">
+                                            </label>
+                                            <div class="upload_btns m-1 dropbox"></div>
+                                            <div class="upload_btns m-1 google_drive" onclick="loadPicker()"></div>
+                                        </center>
+                                        </div>
+                                        <p class="d3 fw_700"><center>(Max Size 1MB)</center></p>
+                                    </div>
+                                </div>
+                                <div class="input_section b-white" id="preview" style="display:none"></div>
+                            </div>
+                            <div class="col p-0 my-3">
+                                <center>
+                                <input name="_token" type="hidden" value="RaNLK7MtehQaU7P6aLikjeyXyKs6Jdg1wyT0IrC1">
+                                <button type="submit" class="btn btn-success marg-top">Upload
+                                    
+                                </button>
+                                </center>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/js/doc.js"></script>
+</body>
+</html>
+
